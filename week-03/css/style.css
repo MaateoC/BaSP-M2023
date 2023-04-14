@@ -1,0 +1,347 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    font-style: justify;
+}
+
+.text-darkcyan {
+    color:darkcyan;
+}
+
+body {
+    margin-left: 50px;
+    margin-right: 70px;
+}
+
+.container {
+    border-bottom: 2px solid black;
+    height: 300px;
+}
+
+main p {
+    position: absolute;
+    width: 407px;
+    height: 50px;
+    left: 50px;
+    top: 170px;
+}
+
+.learn-more {
+    position: absolute;
+    width: 170px;
+    height: 47px;
+    left: 50px;
+    top: 320px;
+}
+
+.welcome-image {
+    position: relative;
+    left: 500px;
+    top: 195px;
+    height: 260px;
+}
+
+.personal-info {
+    display: flex;
+    margin: 30px;
+}
+
+header {
+    display: flex;
+    font-size: 25px;
+    justify-content: space-between;
+    left: 2000px;
+    margin-right: 50px;
+    align-items: center;
+    border-bottom: 2px solid black;
+    max-height: 70px;
+}
+
+h1 {
+    position: absolute;
+    left: 100px;
+    text-shadow: 0px 2px 2px;
+}
+
+.icon-home {
+    position: absolute;
+    left: 1050px;
+}
+
+.icon-user {
+    position: absolute;
+    left: 1100px;
+}
+
+.icon-share {
+    position: absolute;
+    left: 1150px;
+}
+
+.icon-info {
+    position: absolute;
+    left: 1200px;
+}
+
+.icon-menu {
+    position: absolute;
+    left: 50px;
+}
+
+.app-function {
+    position: relative;
+    left: 30px;
+    text-shadow: 0px 2px 2px;
+}
+.img-appointment {
+    position: relative;
+    left: 10px;
+}
+.appointment-booking {
+    position: relative;
+    left: 120px;
+    top: 30px;
+}
+
+.p-appointment {
+    position: relative;
+    left: 120px;
+    width: 300px;
+    top: -70px;
+}
+
+.img-membership {
+    position: relative;
+    left: 10px;
+    top: -20px;
+}
+
+.membership-management {
+    position: relative;
+    left: 120px;
+    top: 5px;
+}
+
+.p-membership {
+    position: relative;
+    left: 120px;
+    width: 300px;
+    top: -90px;
+}
+
+.img-display {
+    position: relative;
+    left: 700px;
+    top: -470px;
+}
+
+.display-agenda {
+    position: relative;
+    left: 800px;
+    top: -440px;
+}
+
+.p-display {
+    position: relative;
+    left: 800px;
+    width: 300px;
+    top: -540px;
+}
+
+.img-contact {
+    position: relative;
+    left: 700px;
+    top: -500px;
+}
+
+.contact-suggestions {
+    position: relative;
+    left: 800px;
+    top: -470px;
+}
+
+.p-contact {
+    position: relative;
+    left: 800px;
+    width: 300px;
+    top: -570px;
+}
+
+.section-app {
+    border-bottom: 2px solid black;
+    max-height: 500px;
+}
+
+.about-us {
+    position: relative;
+    left: 10px;
+    text-align: center;
+    top: 12px;
+}
+
+.p-personal-info {
+    position: relative;
+    left: 80px;
+    width: 800px;
+    bottom: 12px;
+}
+
+.personal-info {
+    border-bottom: 2px solid black;
+}
+
+.questionary-title {
+    position: relative;
+    left: 30px;
+}
+
+.questionary-gaps {
+    position: relative;
+    left: 30px;
+    width: 100px;
+}
+
+.send-button {
+    position: relative;
+    top: 75px;
+}
+
+.first-name {
+    position: relative;
+    top: 15px;
+}
+
+.last-name {
+    position: relative;
+    top: 35px;
+}
+
+.email {
+    position: relative;
+    top: 55px;
+}
+
+.comments {
+    position: relative;
+    top: 65px;
+    height: 180px;
+    width: 900px;
+}
+
+.contact {
+    position: relative;
+    left: 450px;
+    top: -335px;
+}
+
+.reason-1 {
+    position: relative;
+    left: 5px;
+    bottom: 1px;
+}
+
+.reason-2 {
+    position: relative;
+    left: -328px;
+    bottom: -40px;
+}
+
+.reason-3 {
+    position: relative;
+    left: -516px;
+    bottom: -80px;
+}
+
+.contact-input-1 {
+    position: relative;
+    left: 5px;
+    bottom: 1px;
+}
+
+.contact-input-2 {
+    position: relative;
+    left: -328px;
+    bottom: -40px;
+}
+
+.contact-input-3 {
+    position: relative;
+    left: -516px;
+    bottom: -80px;
+}
+.feedback {
+    border-bottom: 2px solid black;
+    max-height: 450px;
+}
+
+.activities {
+    position: relative;
+    left: 30px;
+}
+
+.black-membership {
+    position: relative;
+    left: 200px;
+    top: -136px;
+}
+
+.black-info {
+    position: relative;
+    left: 180px;
+    top: -136px;
+}
+
+.classic-membership {
+    position: relative;
+    left: 550px;
+    top: -270px;
+}
+
+.classic-info {
+    position: relative;
+    left: 530px;
+    top: -270px;
+}
+
+.only-classes {
+    position: relative;
+    left: 900px;
+    top: -387px;
+}
+
+.only-info {
+    position: relative;
+    left: 885px;
+    top: -387px;
+}
+
+.general-data {
+    border-bottom: 2px solid black;
+    max-height: 150px;
+}
+
+.img-facebook {
+    position: relative;
+    left: 450px;
+}
+
+.img-whatsapp {
+    position: relative;
+    left: 500px;
+}
+
+.img-instagram {
+    position: relative;
+    left: 550px;
+
+}
+
+.p-footer {
+    position: relative;
+    left: 490px;
+    font-weight: bolder;
+}
+
+footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
