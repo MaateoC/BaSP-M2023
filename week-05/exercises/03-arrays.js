@@ -5,8 +5,8 @@ console.log ("--EXERCISE 3: ARRAYS");
 console.log("-Exercise 3.a:");
 
 var months = ["January" , "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-console.log(months[4]);
-console.log(months[10]);
+console.log(months[5]);
+console.log(months[11]);
 
 //b. Ordenar el array de meses alfabéticamente y mostrarlo por consola (utilizar sort).
 
@@ -51,5 +51,5 @@ console.log(unitedMonths);
 console.log("-Exercise 3.g:")
 
 var months = ["January" , "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var monthsCopy = months.slice(4,11);
+var monthsCopy = months.slice(5,11);
 console.log(monthsCopy);
