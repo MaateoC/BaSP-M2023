@@ -59,17 +59,13 @@
         align-items: flex-start;
         margin-bottom: 60px;
         padding-left: 15px;
-        background-position: left 250px bottom 10px;
+        background-position: left 280px bottom 10px;
         background-color: white;
         height: 550px;
     }
 
     .hero button {
         margin-left: 0;
-    }
-
-    .hero-img {
-        display: none;
     }
 
     .hero h2 {
@@ -87,7 +83,7 @@
         font-weight: bolder;
     }
     .hero p {
-        width: 30%;
+        width: 40vh;
         margin-bottom: 30px;
         margin-left: 2px;
     }

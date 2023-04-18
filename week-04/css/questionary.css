@@ -82,23 +82,23 @@ button:hover {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    height: 30px;
+    height: 25px;
     font-size: 15px;
     margin-left: 25px;
 }
 
 #info {
-    margin-bottom: 6px;
+    margin-bottom: 9px;
     margin-right: 4px;
 }
 
 #query {
-    margin-bottom: 6px;
+    margin-bottom: 9px;
     margin-right: 4px;
 }
 
 #claim {
-    margin-bottom: 6px;
+    margin-bottom: 9px;
     margin-right: 4px;
 }
 
