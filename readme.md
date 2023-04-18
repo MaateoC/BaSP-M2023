@@ -22,4 +22,10 @@ What did I learned on this week?
 
 Add CSS Flexbox to the HTML to make the page responsive. Also, we create the GitHub pages.
 The link to the GitHub pages is: https://maateoc.github.io/BaSP-M2023/week-04/
+
+## Week-05
+```
+What did I learned on this week?
+```
+Learned "variables and operators"; "strings; "arrays"; "if-else"; "for" and "functions" from JavaScript
 ## Author: Mateo Carciente
