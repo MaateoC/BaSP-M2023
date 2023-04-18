@@ -10,9 +10,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #49A37B;
     text-shadow: 0px 4px 4px;
     font-size: 30px;
+    color: #49A37B;
 }
 
 .contact-placeholders {
@@ -82,9 +82,9 @@ button:hover {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    margin-left: 25px;
     height: 25px;
     font-size: 15px;
-    margin-left: 25px;
 }
 
 #info {
@@ -137,8 +137,8 @@ button:hover {
 
     .questionary {
         display: flex;
-        flex-direction: column;
         position: relative;
+        flex-direction: column;
     }
 
     .questionary-qq {
@@ -178,14 +178,14 @@ button:hover {
 
     .send-button {
         margin-top: 30px;
-        font-size: 20px;
-        font-weight: bold;
-        padding: 10px 30px;
-        border: 1px solid black;
-        color: black;
-        background-color:lightgrey;
         margin-bottom: 20px;
         width: 150px;
+        padding: 10px 30px;
+        background-color:lightgrey;
+        border: 1px solid black;
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
     }
     .form-container {
         display: flex;
@@ -197,9 +197,9 @@ button:hover {
 
     .reason-container {
         display: flex;
+        position: absolute;
         flex-direction: column;
         align-items: flex-start;
-        position: absolute;
         width: 40vw;
         margin-top: 7px;
         font-size: 20px;
@@ -212,8 +212,8 @@ button:hover {
     .inside-reason {
         display: flex;
         flex-direction: column;
-        height: 150px;
         justify-content: space-between;
+        height: 150px;
     }
 
     .info-part {
