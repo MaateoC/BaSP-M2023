@@ -18,37 +18,25 @@
     color: #49A37B;
 }
 
-.first-two {
-    padding-right: 70px;
-}
-
-
 .activities-container {
     display: flex;
 }
 
-.general-info {
-    justify-content: flex-start;
-    margin: 0;
+.first-two {
+    padding-right: 70px;
 }
 
 @media screen and (min-width:601px) {
+
+    .general-data {
+        height: 700px;
+    }
 
     .activities-container {
         display: flex;
         flex-direction: column;
     }
 
-    .general-data {
-        height: 700px;
-    }
-
-
-    .general-data h3 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 }
 
 @media screen and (min-width:1025px) {
@@ -57,53 +45,14 @@
         display: flex;
         flex-direction: row;
         height: 250px;
+        padding-bottom: 50px;
         font-size: 10px;
     }
 
-    .h3-activities {
-        display: flex;
-        flex-direction: row;
-        padding-right: 10px;
-    }
-
-    .h3-black {
-        display: flex;
-        flex-direction: row;
-        padding-right: 45px;
-    }
-
-    .h3-classic {
-        display: flex;
-        flex-direction: row;
-        padding-right: 10px;
-    }
-
-    .h3-only {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 60vh;
-        font-size: 5px;
-    }
-
-
     .activities-container-li {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         margin-top: 10px;
         margin-left: 20px;
         font-size: 12px;
-    }
-
-    .first-two {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .second-two {
-        display: flex;
-        flex-direction: column;
     }
 
     .general-info {
@@ -134,5 +83,9 @@
         margin-top: 8px;
         padding-left: 10px;
         font-size: 12px;
+    }
+
+    .h3-only {
+        width: 60vh;
     }
 }

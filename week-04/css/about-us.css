@@ -10,14 +10,14 @@
     border-bottom: 2px solid black;
 }
 
-.about-us .mobile {
-    text-align: center;
-    width: 380px;
-}
-
 .about-us h2 {
     text-shadow: 0px 4px 4px;
     color: #49A37B;
+}
+
+.about-us .mobile {
+    text-align: center;
+    width: 380px;
 }
 
 .tablet-desktop {

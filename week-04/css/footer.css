@@ -25,13 +25,13 @@ footer p {
         margin-bottom: 80px;
     }
 
+    .icon-footer {
+        height: 40px;
+    }
+    
     footer p {
         padding-top: 10px;
         font-size: 25px;
     }
 
-    .icon-footer {
-        display: flex;
-        height: 40px;
-    }
 }

@@ -21,17 +21,9 @@
     align-items: center;
 }
 
-.send-button {
-    margin-top: 10px;
-}
-
 .placeholders {
     display: flex;
     flex-direction: column;
-}
-
-.comments {
-    height: 50px;
 }
 
 .last-name-label {
@@ -47,6 +39,10 @@
     height: 10px;
 }
 
+.comments {
+    height: 50px;
+}
+
 .contact-placeholders>button {
     margin-top: 10px;
     height: 34px;
@@ -54,14 +50,17 @@
     border-radius: 5px;
 }
 
+button:hover {
+    background-color: darkgrey;
+}
+
+.send-button {
+    margin-top: 10px;
+}
 
 .questionary a {
     text-decoration: none;
     color: black;
-}
-
-button:hover {
-    background-color: darkgrey;
 }
 
 .reason {
@@ -102,24 +101,22 @@ button:hover {
     margin-right: 4px;
 }
 
-
 @media screen and (min-width:601px) {
 
     .questionary {
         height: 550px;
     }
 
-    .reason {
-        padding-top: 50px;
-    }
-
     .questionary h3 {
         padding-bottom: 30px;
     }
 
-
     .contact-placeholders input {
         width: 300px;
+    }
+
+    .reason {
+        padding-top: 50px;
     }
 
     .info-part, .query-part, .claim-part {
@@ -129,16 +126,14 @@ button:hover {
 
 @media screen and (min-width:1025px) {
 
-    .reason {
-        display: flex;
-        flex-direction: column;
-        padding-top: 0;
-    }
-
     .questionary {
         display: flex;
         position: relative;
         flex-direction: column;
+    }
+
+    .form-container {
+        display: flex;
     }
 
     .questionary-qq {
@@ -147,14 +142,10 @@ button:hover {
     }
 
     .contact-placeholders {
-        display: flex;
-        flex-direction: column;
         align-items: flex-start;
     }
 
     .placeholders {
-        display: flex;
-        flex-direction: column;
         align-items: flex-start;
         padding-left: 150px;
     }
@@ -187,12 +178,9 @@ button:hover {
         font-weight: bold;
         color: black;
     }
-    .form-container {
-        display: flex;
-    }
 
-    .info-part, .query-part, .claim-part {
-        margin-left: 0;
+    .reason {
+        padding-top: 0;
     }
 
     .reason-container {
@@ -216,18 +204,7 @@ button:hover {
         height: 150px;
     }
 
-    .info-part {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .claim-part #claim {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .query-part #query {
-        display: flex;
-        flex-direction: row;
+    .info-part, .query-part, .claim-part {
+        margin-left: 0;
     }
 }
