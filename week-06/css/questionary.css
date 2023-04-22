@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+}
+
+.questionary {
+    border-bottom: 2px solid black;
+}
+
+.questionary h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: 0px 4px 4px;
+    font-size: 30px;
+    color: #49A37B;
+}
+
+.contact-placeholders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.placeholders {
+    display: flex;
+    flex-direction: column;
+}
+
+.last-name-label {
+    height: 10px;
+    line-height: 10px;
+}
+
+.email-label {
+    height: 10px;
+}
+
+.comments-label {
+    height: 10px;
+}
+
+.comments {
+    height: 50px;
+}
+
+.contact-placeholders>button {
+    margin-top: 10px;
+    height: 34px;
+    width: 102px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: darkgrey;
+}
+
+.send-button {
+    margin-top: 10px;
+}
+
+.questionary a {
+    text-decoration: none;
+    color: black;
+}
+
+.reason {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.reason h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #49A37B;
+}
+
+.info-part, .query-part, .claim-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 25px;
+    height: 25px;
+    font-size: 15px;
+}
+
+#info {
+    margin-bottom: 9px;
+    margin-right: 4px;
+}
+
+#query {
+    margin-bottom: 9px;
+    margin-right: 4px;
+}
+
+#claim {
+    margin-bottom: 9px;
+    margin-right: 4px;
+}
+
+@media screen and (min-width:601px) {
+
+    .questionary {
+        height: 550px;
+    }
+
+    .questionary h3 {
+        padding-bottom: 30px;
+    }
+
+    .contact-placeholders input {
+        width: 300px;
+    }
+
+    .reason {
+        padding-top: 50px;
+    }
+
+    .info-part, .query-part, .claim-part {
+        margin-left: 150px;
+    }
+}
+
+@media screen and (min-width:1025px) {
+
+    .questionary {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+    }
+
+    .form-container {
+        display: flex;
+    }
+
+    .questionary-qq {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-placeholders {
+        align-items: flex-start;
+    }
+
+    .placeholders {
+        align-items: flex-start;
+        padding-left: 150px;
+    }
+
+    .last-name-label {
+        height: 40px;
+    }
+
+    .email-label {
+        height: 40px;
+    }
+
+    .comments-label {
+        height: 40px;
+    }
+
+    #comments {
+        height: 100px;
+        width: 450px;
+    }
+
+    .send-button {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        width: 150px;
+        padding: 10px 30px;
+        background-color:lightgrey;
+        border: 1px solid black;
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .reason {
+        padding-top: 0;
+    }
+
+    .reason-container {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 40vw;
+        margin-top: 7px;
+        font-size: 20px;
+    }
+
+    .reason-container h2 {
+        margin-bottom: 40px;
+    }
+
+    .inside-reason {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 150px;
+    }
+
+    .info-part, .query-part, .claim-part {
+        margin-left: 0;
+    }
+}
