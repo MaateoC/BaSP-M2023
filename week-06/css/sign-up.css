@@ -25,12 +25,6 @@
     margin-bottom: 30px;
 }
 
-.mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #name, #lname, #dni, #birthdate, #phone-number, #adress, #location, #zip-code, #email, #password, #repeat-password {
     margin-bottom: 10px;
 }
@@ -58,10 +52,6 @@ button:hover {
         width: 90%;
     }
 
-    .mobile {
-        display: none;
-    }
-
     #name, #lname, #dni, #birthdate, #phone-number, #adress, #location, #zip-code, #email, #password, #repeat-password {
         height: 30px;
     }
@@ -80,5 +70,13 @@ button:hover {
     .right-form-container {
         display: flex;
         flex-direction: column;
+    }
+
+    .input-error {
+        border: red solid 1px;
+    }
+
+    .input-correct {
+        border:green solid 1px;
     }
 }

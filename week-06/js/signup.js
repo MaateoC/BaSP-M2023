@@ -11,86 +11,116 @@ var passwordInput = document.getElementById("password");
 var formInput = document.querySelector("form");
 var repeatPasswordInput = document.getElementById("repeat-password");
 var submitButtonInput = document.getElementById("submit-button");
+var errorMessage = [];
 
 
-
-function validateName(){
-  if (nameInput.value == "" || nameInput.value == null) {
+function validateName(e){
+  if (e.target.value == "" || e.target.value == null) {
     errorMessage[0] = "Name is required";
+    nameInput.classList.remove("input-correct")
+    nameInput.classList.add("input-error");
     return false
   }
-  if (nameInput.value.length < 3) {
+  else if (e.target.value.length < 4) {
     errorMessage[0] = "More than 3 letters required";
-    return false;
-  }
+    nameInput.classList.remove("input-correct");
+    nameInput.classList.add("input-error");
+  } else {
+  nameInput.classList.remove("input-error");
+  nameInput.classList.add("input-correct");
   return true
+  }
 }
 
-function validateSurname(){
-  if (surnameInput.value == "" || surnameInput.value == null) {
+function validateSurname(e){
+  if (e.target.value == "" || e.target.value == null) {
     errorMessage[1] = "Surname is required";
+    surnameInput.classList.remove("input-correct")
+    surnameInput.classList.add("input-error");
     return false;
   }
-  if (surnameInput.value.length < 3) {
+  else if (e.target.value.length < 4) {
     errorMessage[1] = "More than 3 letters required";
-    return false;
-  }
+    surnameInput.classList.remove("input-correct");
+    surnameInput.classList.add("input-error");
+  } else {
+    surnameInput.classList.remove("input-error");
+    surnameInput.classList.add("input-correct");
   return true;
+  }
 }
 
-function validateId() {
-  if (idInput.value == "" || idInput.value == null) {
+function validateId(e) {
+  if (e.target.value == "" || e.target.value == null) {
     errorMessage[2] = "ID required";
+    idInput.classList.remove("input-correct");
+    idInput.classList.add("input-error");
   }
-  if (idInput.value.length < 7) {
+  if (e.target.value.length < 7) {
     errorMessage[2] = "More than 7 numbers required";
+    idInput.classList.add("input-error");
   }
   var containLetters = false;
-  for(let i = 0; i < idInput.value.length; i++) {
-    if (!Number(idInput.value[i])) {
+  for(let i = 0; i < e.target.value.length; i++) {
+    if (!Number(e.target.value[i])) {
       containLetters = true;
     }
   }
   if (containLetters) {
     errorMessage[2] = "This is not a number"
+    idInput.classList.remove("input-error");
+    idInput.classList.add("input-correct");
   }
   return true
   }
 
-function validateBirthdate() {
-  if (birthdateInput.value == "" || birthdateInput.value == null) {
+function validateBirthdate(e) {
+  if (e.target.value == "" || e.target.value == null) {
     errorMessage[3] = "Date required";
+    birthdateInput.classList.add("input-error");
     return false;
+  } else {
+    birthdateInput.classList.remove("input-error");
+    birthdateInput.classList.add("input-correct");
   }
   return true
 }
 
-function validatePhoneNumber () {
-  if (phoneNumberInput.value == "" || phoneNumberInput.value == null) {
+function validatePhoneNumber (e) {
+  if (e.target.value == "" || e.target.value == null) {
     errorMessage[4] = "Phone Number required";
+    phoneNumberInput.classList.add("input-error");
     return false;
   }
-  if (phoneNumberInput.value.length !== 10) {
+  if (e.target.value.length < 10) {
     errorMessage[4] = "It must contain 10 numbers";
+    phoneNumberInput.classList.add("input-error");
 }
 var containLetters = false;
-for(let i = 0; i < phoneNumberInput.value.length; i++) {
-  if (!Number(phoneNumberInput.value[i])) {
+for(let i = 0; i < e.target.value.length; i++) {
+  if (!Number(e.target.value[i])) {
     containLetters = true;
   }
 }
 if (containLetters) {
-  errorMessage[4] = "This is not a number"
+  errorMessage[4] = "This is not a number";
+  phoneNumberInput.classList.add("input-error");
+} if (e.target.value.length == 10) {
+  phoneNumberInput.classList.remove("input-error");
+  phoneNumberInput.classList.add("input-correct");
 }
 return true
-}
+  }
 
-function validateAdress () {
-  if (adressInput.value == "" || adressInput.value == null) {
+function validateAdress (e) {
+  if (e.target.value == "" || e.target.value == null) {
     errorMessage[5] = "Adress required";
+    adressInput.classList.add("input-error");
     return false;
   }
-  if ()
+  if (e.target.value < 5); {
+    adressInput.classList.add("input-error");
+  }
 }
 
 function validateLocation () {
@@ -98,13 +128,44 @@ function validateLocation () {
     errorMessage[6] = "Location required";
     return false;
   }
-  if (locationInput.value.length < 3) {
+  if (locationInput.value.length < 4) {
     errorMessage[6] = "More than 3 characters required";
     return false
   }
   return true;
 }
 
+function validateZipCode (e) {
+  if (e.target.value == "" || e.target.value == null) {
+    errorMessage[7] = "Zip Code required";
+    return false;
+  }
+  
+}
+
+function validateEmail (e) {
+  var validateEmail = /^[^@]+@[^@]+.[a-zA-Z]{2,}$/;
+  if (e.target.value == "" || e.target.value == null) {
+    errorMessage[8] = "Email is required";
+    emailInput.classList.add("input-error");
+    return false;
+  } if (!validateEmail.test(emailInput.value)) {
+        errorMessage[8] = "Invalid email";
+        emailInput.classList.add("input-error");
+  }else {
+    emailInput.classList.remove("input-error");
+    emailInput.classList.add("input-correct");
+  }
+  return true
+}
+
+function validatePassword (e) {
+
+}
+
+function validateRepeatPassword (e) {
+
+}
 
 nameInput.addEventListener("blur", validateName);
 surnameInput.addEventListener("blur", validateSurname);
@@ -113,33 +174,7 @@ birthdateInput.addEventListener("blur", validateBirthdate);
 phoneNumberInput.addEventListener ("blur", validatePhoneNumber);
 adressInput.addEventListener ("blur",validateAdress);
 locationInput.addEventListener("blur", validateLocation);
-
-
-
-
-
-// submitButton.addEventListener("click", e=>{
-//     e.preventDefault()
-//     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//     if (nameU.value.length < 3 ){
-//     alert("The name must contain more than 3 characters")
-//     }else {
-//       nameU.style.border= "2px solid green";
-//     }
-//     if (lName.value.length < 3){
-//     alert("The last name must contain more than 3 characters")
-//     }else{
-//         lName.style.border= "2px solid green";
-//     }
-//     if (!regexEmail.test(email.value)){
-//       alert("The email is not valid")
-//     }else{
-//       email.style.border= "2px solid green";
-//     }
-//     if(password.value.length < 8) {
-//       alert("The password must contain at least 8 characters, letters and numbers")
-//     }else {
-//       password.style.border="2px solid green";
-//     }
-//     }
-// )
+zipCodeInput.addEventListener("blur", validateZipCode);
+emailInput.addEventListener("blur", validateEmail);
+passwordInput.addEventListener("blur", validatePassword);
+repeatPasswordInput.addEventListener("blur", validateRepeatPassword);
