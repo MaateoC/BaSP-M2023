@@ -83,3 +83,11 @@ form {
     background-color: #49A37B;
     color: white;
 }
+
+.input-error {
+    border: red solid 1px;
+}
+
+.input-correct {
+    border:green solid 1px;
+}

@@ -1,60 +1,87 @@
-var form = document.getElementById("form");
+var formInput = document.querySelector("form");
 var emailInput = document.getElementById("email");
 var passwordInput = document.getElementById("password");
 var loginButton = document.getElementById("continue");
+var errorMessage = [];
 
-//TODO:!crear array de errores dentro de validate email
-function validateEmail(e) {
-  //TODO:!adentro de esta function voy a usar un arreglo de errores en la posicion 0
-  var email = emailInput.value;
-  if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
-    emailInput.style.border = "1px solid red";
-    e.preventDefault();
+function validateEmail (e) {
+  var validateEmail = /^[^@]+@[^@]+.[a-zA-Z]{2,}$/;
+  if (e.target.value == "" || e.target.value == null) {
+    errorMessage.push("Email is required");
+    emailInput.classList.add("input-error");
     return false;
+  } if (!validateEmail.test(emailInput.value)) {
+    errorMessage.push("Invalid email");
+        emailInput.classList.add("input-error");
+  }else {
+    emailInput.classList.remove("input-error");
+    emailInput.classList.add("input-correct");
   }
-  emailInput.style.border = "2px solid green";
-  return true;
-}
-function validatePassword(e) {
-  //TODO:!adentro de esta function voy a usar un arreglo de errores en la posicion 1
-  var password = passwordInput.value;
-  var containsLetter = false;
-  var containsNumbers = false;
-
-  for (var i = 0; i < password.length; i++) {
-    if (isNaN(password.charAt(i))) {
-      containsLetter = true;
-    } else {
-      containsNumbers = true;
-    }
-  }
-
-  if (password.length < 8 || !(containsLetter && containsNumbers)) {
-    passwordInput.style.border = "1px solid red";
-    e.preventDefault();
-    return false;
-  }
-  passwordInput.style.border = "2px solid green";
-  return true;
+  return true
 }
 
-function validateForm(e) {
-  //TODO:!acá chequeo si el arreglo tiene errores
-  var validEmail = validateEmail(e);
-  var validPassword = validatePassword(e);
-  if (!validEmail) {
-    alert("The email must contain a valid format");
+function validatePassword (e) {
+  if (e.target.value == "" || e.target.value == null) {
+    errorMessage.push("Password is required");
+    passwordInput.classList.add("input-error");
+    return false;
+  } if (e.target.value.length < 8 || e.target.value.length > 40){
+    errorMessage.push("Password must contain between 8 and 40 characters");
+    passwordInput.classList.add("input-error");
+    return false; 
   }
-  if (!validPassword) {
-    alert("Password must have at least one character");
+  var containsNumber = false;
+for(let i = 0; i < e.target.value.length; i++) {
+  if (Number(e.target.value[i])) {
+    containsNumber = true;
   }
-  if (validEmail && validPassword) {
-    alert(
-      "Email: " + emailInput.value + "\nContraseña: " + passwordInput.value
-    );
+}
+  if (!containsNumber) {
+    errorMessage.push("Password must contain at least one number");
+    passwordInput.classList.add("input-error");
+    return false;
   }
+  var containLetters = false;
+for(let i = 0; i < e.target.value.length; i++) {
+  if (!Number(e.target.value[i])) {
+    containLetters = true;
+  }
+}
+  if (!containLetters) {
+    errorMessage.push("Password must contain at least one letter");
+    passwordInput.classList.add("input-error");
+    return false;
+  } else {
+    passwordInput.classList.remove("input-error");
+    passwordInput.classList.add("input-correct");
+    return true
+  }
+}
+
+function showFormAlert () {
+  if (errorMessage.length == 0) {
+    alert("Email:" + emailInput.value + "\n" + "Password:" + passwordInput.value)
+    emailInput.value = "";
+    passwordInput.value = "";
+    passwordInput.classList.remove("input-correct");
+    emailInput.classList.remove("input-correct");
+  } else {
+    var errorAlert = "";
+  for (var i=0; i<errorMessage.length; i++) {
+    errorAlert += errorMessage[i] + "\n"
+  }
+  alert(errorAlert)
+}
 }
 
 emailInput.addEventListener("blur", validateEmail);
+emailInput.addEventListener("focus", function (){
+  emailInput.classList.remove("input-error");
+  emailInput.classList.remove("input-correct");
+})
 passwordInput.addEventListener("blur", validatePassword);
-loginButton.addEventListener("click", validateForm);
+passwordInput.addEventListener("focus", function (){
+  passwordInput.classList.remove("input-error");
+  passwordInput.classList.remove("input-correct");
+})
+loginButton.addEventListener("click", showFormAlert);
