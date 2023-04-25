@@ -34,59 +34,59 @@
             <legend>
                 <h2>Register</h2>
             </legend>
-            <div class="mobile">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name">
-                <label for="lname">Last name</label>
-                <input type="text" id="lname" name="lname">
-                <label for="dni">DNI</label>
-                <input type="text" id="dni" name="dni">
-                <label for="birthdate">BirthDate</label>
-                <input type="text" id="birthdate" name="birthdate">
-                <label for="phone-number">Phone number</label>
-                <input type="text" id="phone-number" name="phone-number">
-                <label for="adress">Adress</label>
-                <input type="text" id="adress" name="adress">
-                <label for="location">Location</label>
-                <input type="text" id="location" name="location">
-                <label for="zip-code">ZIP Code</label>
-                <input type="text" id="zip-code" name="zip-code">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email">
-                <label for="password">Password</label>
-                <input type="text" id="password" name="password">
-                <label for="repeat-password">Repeat Password</label>
-                <input type="text" id="repeat-password" name="repeat-password">
-            </div>
             <div class="forms-containers">
-            <form class="left-form-container">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name">
-                    <label for="lname">Last name</label>
-                    <input type="text" id="lname" name="lname">
-                    <label for="dni">DNI</label>
-                    <input type="text" id="dni" name="dni">
-                    <label for="birthdate">BirthDate</label>
-                    <input type="text" id="birthdate" name="birthdate">
-                    <label for="phone-number">Phone number</label>
-                    <input type="text" id="phone-number" name="phone-number">
+            <form>
+                <div class="left-form-container">
+                    <div class="group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="group">
+                        <label for="surname">Surname</label>
+                        <input type="text" id="surname" name="lname">
+                    </div>
+                    <div class="group">
+                        <label for="id">ID</label>
+                        <input type="number" id="id" name="id">
+                    </div>
+                    <div class="group">
+                        <label for="birthdate">BirthDate</label>
+                        <input type="date" id="birthdate" name="birthdate">
+                    </div>
+                    <div class="group">
+                        <label for="phone-number">Phone number</label>
+                        <input type="text" id="phone-number" name="phone-number">
+                    </div>
+                </div>
+                <div class="right-form-container">
+                    <div class="group">
+                        <label for="adress">Adress</label>
+                        <input type="text" id="adress" name="adress">
+                    </div>
+                    <div class="group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location">
+                    </div>
+                    <div class="group">
+                        <label for="zip-code">ZIP Code</label>
+                        <input type="text" id="zip-code" name="zip-code">
+                    </div>
+                    <div class="group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email">
+                    </div>
+                    <div class="group">
+                        <label for="password">Password</label>
+                        <input type="text" id="password" name="password">
+                    </div>
+                    <div class="group">
+                        <label for="repeat-password">Repeat Password</label>
+                        <input type="text" id="repeat-password" name="repeat-password">
+                    </div>
+                </div>
+                <button id="submit-button" type="submit">Continue</button>
             </form>
-            <form class="right-form-container">
-                    <label for="adress">Adress</label>
-                    <input type="text" id="adress" name="adress">
-                    <label for="location">Location</label>
-                    <input type="text" id="location" name="location">
-                    <label for="zip-code">ZIP Code</label>
-                    <input type="text" id="zip-code" name="zip-code">
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email">
-                    <label for="password">Password</label>
-                    <input type="text" id="password" name="password">
-                    <label for="repeat-password">Repeat Password</label>
-                    <input type="text" id="repeat-password" name="repeat-password">
-            </form>
-            </div>
-            <button>Continue</button>
+        </div>
         </div>
     </section>
 
@@ -98,5 +98,6 @@
         </div>
         <p>&copy;MEGA ROCKET SA 2023</p>
     </footer>
+    <script src="js/signup.js"></script>
 </body>
 </html>
