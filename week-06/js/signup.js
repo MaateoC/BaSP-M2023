@@ -113,13 +113,35 @@ return true
   }
 
 function validateAdress (e) {
+  var indexOfSpace = e.target.value.indexOf(" ");
+  var isLetter = false;
+  var isNumber = false;
+
   if (e.target.value == "" || e.target.value == null) {
     errorMessage[5] = "Adress required";
     adressInput.classList.add("input-error");
     return false;
   }
-  if (e.target.value < 5); {
+  else if (e.target.value.lenght < 5) {
+    errorMessage[5] = "Adress must contain at least 5 characters";
     adressInput.classList.add("input-error");
+    return false
+  }
+  else if (!Number(e.target.value[indexOfSpace - 1])) {
+    isLetter = true;
+  }
+  else if (Number(e.target.value[indexOfSpace + 1])) {
+    isNumber = true;
+  }
+  else if (!isLetter || !isNumber || indexOfSpace == -1) {
+    errorMessage[5] = "Blank space must be between a letter and a number";
+    adressInput.classList.add("input-error");
+    console.log(errorMessage[5]);
+    return false;
+  } else {
+    adressInput.classList.remove("input-error");
+    adressInput.classList.add("input-correct");
+    return true;
   }
 }
 
@@ -160,7 +182,51 @@ function validateEmail (e) {
 }
 
 function validatePassword (e) {
-
+  if (e.target.value == "" || e.target.value == null) {
+    errorMessage[9] = "Password is required";
+    passwordInput.classList.add("input-error");
+    console.log(errorMessage[9]);
+    return false;
+  } if (e.target.value.length < 8 || e.target.value.length > 40){
+    errorMessage[9] = "Password must contain between 8 and 40 characters";
+    passwordInput.classList.add("input-error");
+    console.log(errorMessage[9]);
+    return false; 
+  }
+  var containsNumber = false;
+  for (var i=0;i<e.target.value.lenght; i++) {
+    var character = e.target.value.charAt(i);
+    if(!isNaN(parseInt(character)) && isFinite(character)) {
+      containsNumber = true;
+      console.log(errorMessage[9]);
+      break;
+    }
+  }
+  if (!containsNumber) {
+    errorMessage[9] = "Password must contain at least one number";
+    passwordInput.classList.add("input-error");
+    console.log(errorMessage[9]);
+    return false;
+  }
+  var containsLetter = false;
+  for (var i=0; i<e.target.value.lenght;i++) {
+    var character = e.target.value.charAt(i);
+    if ((character >='a' && character <= 'z') || (character >= 'A' && character <= 'Z')) {
+      containsLetter=true;
+      console.log(errorMessage[9]);
+      break;
+    }
+  }
+  if (!containsLetter) {
+    errorMessage[9] = "Password must contain at least one letter";
+    emailInput.classList.add("input-error");
+    console.log(errorMessage[9]);
+    return false;
+  } else {
+    emailInput.classList.remove("input-error");
+    emailInput.classList.add("input-correct");
+    return true
+  }
 }
 
 function validateRepeatPassword (e) {
@@ -173,6 +239,9 @@ idInput.addEventListener("blur", validateId);
 birthdateInput.addEventListener("blur", validateBirthdate);
 phoneNumberInput.addEventListener ("blur", validatePhoneNumber);
 adressInput.addEventListener ("blur",validateAdress);
+adressInput.addEventListener("focus", function (){
+  adressInput.classList.remove("input-error");
+})
 locationInput.addEventListener("blur", validateLocation);
 zipCodeInput.addEventListener("blur", validateZipCode);
 emailInput.addEventListener("blur", validateEmail);
