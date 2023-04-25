@@ -2,8 +2,83 @@
     box-sizing: border-box;
 }
 
-.formulario {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.signup-questionary {
+    border-bottom: 2px solid black;
+}
+
+.questionary-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    background-color: #FDFBFB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 15px;
+}
+
+.questionary-container h2 {
+    margin-bottom: 30px;
+}
+
+.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#name, #lname, #dni, #birthdate, #phone-number, #adress, #location, #zip-code, #email, #password, #repeat-password {
+    margin-bottom: 10px;
+}
+
+.left-form-container, .right-form-container {
+    display: none;
+}
+
+.questionary-container button {
+    margin-top: 30px;
+    height: 30px;
+    width: 120px;
+    border-radius: 3px;
+    background-color: #49A37B;
+    color: white;
+}
+
+button:hover {
+    background-color:rgba(25, 113, 120, 0.767)
+}
+
+@media screen and (min-width:601px) { 
+
+    .questionary-container {
+        width: 90%;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    #name, #lname, #dni, #birthdate, #phone-number, #adress, #location, #zip-code, #email, #password, #repeat-password {
+        height: 30px;
+    }
+
+    .forms-containers {
+        display: flex;
+        flex-direction: row;
+    }  
+
+    .left-form-container {
+        display: flex;
+        flex-direction: column;
+        margin-right: 40px;
+    }
+
+    .right-form-container {
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -2,6 +2,7 @@ var form = document.getElementById("form");
 var emailInput = document.getElementById("email");
 var passwordInput = document.getElementById("password");
 var loginButton = document.getElementById("continue");
+
 //TODO:!crear array de errores dentro de validate email
 function validateEmail(e) {
   //TODO:!adentro de esta function voy a usar un arreglo de errores en la posicion 0

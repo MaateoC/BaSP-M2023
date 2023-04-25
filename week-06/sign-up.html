@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
-    <script src="/week-06/sign-up.js"></script>
 </head>
 <body>
     <header>
@@ -60,116 +59,34 @@
                 <input type="text" id="repeat-password" name="repeat-password">
             </div>
             <div class="forms-containers">
-            <form class="formulario" id="formulario">
-                    
-                        <!-- Grupo Nombre -->
-                <div class="group-form" id="name-group">
-                    <label for="name" class="form-label">Name</label>
-                    <div class="form-group-input">
-                        <input type="text" class="form-input" id="name" name="name" placeholder="ej:Mateo">
-                        <i class="form-validation-status fa-solid fa-circle-xmark"></i>
-                    </div>
-                    <p class="form-input-error">Solo letras y debe tener más de 3 letras.</p>
-                    
-                        <!-- Grupo Apellido -->
-                <div class="group-form" id="lname-group">
-                    <label for="lname" class="form-label">Last name</label>
-                    <div class="form-group-input">
-                        <input type="text" class="form-input" id="lname" name="lname" placeholder="ej:Carciente">
-                        <i class="form-validation-status fa-solid fa-circle-xmark"></i>
-                    </div>
-                    <p class="form-input-error">Solo letras y debe tener más de 3 letras.</p>
-
-                        <!-- Grupo DNI -->
-                <div class="group-form" id="dni-group">
-                    <label for="dni" class="form-label">DNI</label>
-                    <div class="form-group-input">
-                        <input type="text" class="form-input" id="dni" name="dni">
-                        <i class="form-validation-status fa-solid fa-circle-xmark"></i>
-                    </div>
-                    <p class="form-input-error">Solo números y debe tener más de 7 números.</p>
-
-                        <!-- Grupo Fecha Nacimiento -->
-                <div class="group-form" id="birthdate-group">
-                    <label for="birthdate" class="form-label">BirthDate</label>
-                    <div class="form-group-input">
-                        <input type="date" class="form-input" id="birthdate" name="birthdate">
-                        <i class="form-validation-status fa-solid fa-circle-xmark"></i>
-                    </div>
-                    <p class="form-input-error">Con formato dd/mm/aaaa.</p>
-
-                        <!-- Grupo Teléfono -->
-                <div class="group-form" id="phone-number-group">
-                    <label for="phone-number" class="form-label">Phone number</label>
-                    <div class="form-group-input">
-                        <input type="text" class="form-input" id="phone-number" name="phone-number" placeholder="ej:3413713823">
-                        <i class="form-validation-status fa-solid fa-circle-xmark"></i>
-                    </div>
-                    <p class="form-input-error">Solo números y debe tener 10 números.</p>
-
-                        <!-- Grupo Dirección -->
-                <div class="group-form" id="adress-group">
-                    <label for="adress" class="form-label">Adress</label>
-                    <div class="form-group-input">
-                        <input type="text" class="form-input" id="adress" name="adress">
-                        <i class="form-validation-status fa-solid fa-circle-xmark"></i>
-                    </div>
-                    <p class="form-input-error">Al menos 5 caracteres con letras, números y un espacio en el medio.</p>
-
-                        <!-- Grupo Localidad -->
-                <div class="group-form" id="location-group">
-                    <label for="location" class="form-label">Location</label>
-                    <div class="form-group-input">
-                        <input type="text" class="form-input" id="location" name="location">
-                        <i class="form-validation-status fa-solid fa-circle-xmark"></i>
-                    </div>
-                    <p class="form-input-error">Texto alfanumérico y debe tener más de 3 letras.</p>
-
-                        <!-- Grupo Código Postal -->
-                <div class="group-form" id="zip-code-group">
-                    <label for="zip-code" class="form-label">Zip code</label>
-                    <div class="form-group-input">
-                        <input type="text" class="form-input" id="zip-code" name="zip-code" placeholder="ej:2000">
-                        <i class="form-validation-status fa-solid fa-circle-xmark"></i>
-                    </div>
-                    <p class="form-input-error">Texto alfanumérico y debe tener más de 3 letras.</p>
-
-                        <!-- Grupo Email -->
-                <div class="group-form" id="email-group">
-                    <label for="email" class="form-label">Email</label>
-                    <div class="form-group-input">
-                        <input type="text" class="form-input" id="email" name="email" placeholder="ej:Mateo@hotmail.com">
-                        <i class="form-validation-status fa-solid fa-circle-xmark"></i>
-                    </div>
-                    <p class="form-input-error">Debe tener un formato de email válido.</p>
-
-                        <!-- Grupo Contraseña -->
-                <div class="group-form" id="password-group">
-                    <label for="password" class="form-label">Password</label>
-                    <div class="form-group-input">
-                        <input type="password" class="form-input" id="password" name="password">
-                            <i class="form-validation-status fa-solid fa-circle-xmark"></i>
-                    </div>
-                    <p class="form-input-error">Al menos 8 caracteres, formados por letras y números.</p>
-                    
-                        <!-- Grupo Contraseña 2 -->
-                <div class="group-form" id="password-group2">
-                    <label for="password2" class="form-label">Repeat password</label>
-                    <div class="form-group-input">
-                        <input type="password" class="form-input" id="password2" name="password2">
-                        <i class="form-validation-status fa-solid fa-circle-xmark"></i>
-                    </div>
-                    <p class="form-input-error">Al menos 8 caracteres, formados por letras y números.</p>
-
-                <div class="form-message" id="form-message">
-                    <p><i class="fa-solid fa-triangle-exclamation"></i>Error: Por favor rellena el formulario correctamente.</p>
-                </div>
-                <div class="form-button-continue">
-                <button type="submit" class="form-button">Continue</button>
-                <p class="form-message-succed" id="form-message-succed">El formulario se envió exitosamente</p>
-                </div>
+            <form class="left-form-container">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    <label for="lname">Last name</label>
+                    <input type="text" id="lname" name="lname">
+                    <label for="dni">DNI</label>
+                    <input type="text" id="dni" name="dni">
+                    <label for="birthdate">BirthDate</label>
+                    <input type="text" id="birthdate" name="birthdate">
+                    <label for="phone-number">Phone number</label>
+                    <input type="text" id="phone-number" name="phone-number">
+            </form>
+            <form class="right-form-container">
+                    <label for="adress">Adress</label>
+                    <input type="text" id="adress" name="adress">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location">
+                    <label for="zip-code">ZIP Code</label>
+                    <input type="text" id="zip-code" name="zip-code">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" name="password">
+                    <label for="repeat-password">Repeat Password</label>
+                    <input type="text" id="repeat-password" name="repeat-password">
             </form>
             </div>
+            <button>Continue</button>
         </div>
     </section>
 
