@@ -122,9 +122,10 @@ function validateAdress (e) {
     adressInput.classList.add("input-error");
     return false;
   }
-  else if (e.target.value.lenght < 5) {
+  if (e.target.value.length < 5) {
     errorMessage[5] = "Adress must contain at least 5 characters";
     adressInput.classList.add("input-error");
+    console.log(errorMessage[5]);
     return false
   }
   else if (!Number(e.target.value[indexOfSpace - 1])) {
@@ -136,7 +137,6 @@ function validateAdress (e) {
   else if (!isLetter || !isNumber || indexOfSpace == -1) {
     errorMessage[5] = "Blank space must be between a letter and a number";
     adressInput.classList.add("input-error");
-    console.log(errorMessage[5]);
     return false;
   } else {
     adressInput.classList.remove("input-error");
@@ -193,6 +193,7 @@ for(let i = 0; i < e.target.value.length; i++) {
 } if (containLetters) {
     errorMessage[7] = "It only have to contain numbers";
     zipCodeInput.classList.add("input-error");
+    console.log(errorMessage[7])
     return false;
 } else {
   zipCodeInput.classList.remove("input-error");
@@ -274,13 +275,35 @@ function validateRepeatPassword (e) {
 function showFormAlert () {
   console.log("hola");
   if (errorMessage.length == 0) {
-    alert("Email:" + emailInput.value + "\n" + "Password:" + passwordInput.value)
-    emailInput.value = "";
-    passwordInput.value = "";
-    passwordInput.classList.remove("input-correct");
+    alert("Name:" + nameInput.value + "\n" + "Surname:" + surnameInput.value + "\n" + "Id:" + idInput.value + "\n" + "Birthdate:" + birthdateInput.value + "\n" + "Phone Number:" + phoneNumberInput.value + "\n" + "Adress:" + adressInput.value + "\n" + "Location:" + locationInput.value + "\n" + "Zip Code:" + zipCodeInput.value + "\n" + "Email:" + emailInput.value + "\n" + "Password:" + passwordInput.value + "\n" + "Repeat password:" + repeatPasswordInput.value + "\n");
+    nameInput.value ="";
+    surnameInput.value="";
+    idInput.value="";
+    birthdateInput.value="";
+    phoneNumberInput.value="";
+    adressInput.value="";
+    locationInput.value="";
+    zipCodeInput.value="";
+    emailInput.value ="";
+    passwordInput.value ="";
+    repeatPasswordInput.value="";
+    nameInput.classList.remove("input-correct");
+    surnameInput.classList.remove("input-correct");
+    idInput.classList.remove("input-correct");
+    birthdateInput.classList.remove("input-correct");
+    phoneNumberInput.classList.remove("input-correct");
+    adressInput.classList.remove("input-correct");
+    zipCodeInput.classList.remove("input-correct");
     emailInput.classList.remove("input-correct");
-    
+    passwordInput.classList.remove("input-correct");
+    repeatPasswordInput.classList.remove("input-correct");
+  } else {
+    var errorAlert = "";
+  for (var i=0; i<errorMessage.length; i++) {
+    errorAlert += errorMessage[i] + "\n"
   }
+  alert(errorAlert)
+}
 }
 
 

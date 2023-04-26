@@ -21,20 +21,30 @@
     font-size: 15px;
 }
 
+.group {
+    text-align: flex-start;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.input {
+    text-align: flex-end;
+}
+
 .questionary-container h2 {
     margin-bottom: 30px;
 }
 
-#name, #lname, #dni, #birthdate, #phone-number, #adress, #location, #zip-code, #email, #password, #repeat-password {
+#name, #surname, #id, #birthdate, #phone-number, #adress, #location, #zip-code, #email, #password, #repeat-password {
+    display: flex;
+    text-align: start;
     margin-bottom: 10px;
-}
-
-.left-form-container, .right-form-container {
-    display: none;
+    
 }
 
 .questionary-container button {
     margin-top: 30px;
+    margin-left: 25px;
     height: 30px;
     width: 120px;
     border-radius: 3px;
@@ -44,6 +54,14 @@
 
 button:hover {
     background-color:rgba(25, 113, 120, 0.767)
+}
+
+.input-error {
+    border: red solid 1px;
+}
+
+.input-correct {
+    border:green solid 1px;
 }
 
 @media screen and (min-width:601px) { 
@@ -56,27 +74,7 @@ button:hover {
         height: 30px;
     }
 
-    .forms-containers {
-        display: flex;
-        flex-direction: row;
-    }  
-
-    .left-form-container {
-        display: flex;
-        flex-direction: column;
-        margin-right: 40px;
-    }
-
-    .right-form-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .input-error {
-        border: red solid 1px;
-    }
-
-    .input-correct {
-        border:green solid 1px;
+    #birthdate {
+        width: 33vh;
     }
 }
