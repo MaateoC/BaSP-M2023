@@ -28,4 +28,10 @@ The link to the GitHub pages is: https://maateoc.github.io/BaSP-M2023/week-04/
 What did I learned on this week?
 ```
 Learned "variables and operators"; "strings; "arrays"; "if-else"; "for" and "functions" from JavaScript
+
+## Week-06
+```
+What did I learned on this week?
+```
+Learned to use Javascript logic combined with html and css files to do form validations.
 ## Author: Mateo Carciente
