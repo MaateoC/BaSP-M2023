@@ -273,7 +273,6 @@ function validateRepeatPassword (e) {
 }
 
 function showFormAlert () {
-  console.log("hola");
   if (errorMessage.length == 0) {
     alert("Name:" + nameInput.value + "\n" + "Surname:" + surnameInput.value + "\n" + "Id:" + idInput.value + "\n" + "Birthdate:" + birthdateInput.value + "\n" + "Phone Number:" + phoneNumberInput.value + "\n" + "Adress:" + adressInput.value + "\n" + "Location:" + locationInput.value + "\n" + "Zip Code:" + zipCodeInput.value + "\n" + "Email:" + emailInput.value + "\n" + "Password:" + passwordInput.value + "\n" + "Repeat password:" + repeatPasswordInput.value + "\n");
     nameInput.value ="";
