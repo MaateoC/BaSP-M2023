@@ -60,11 +60,25 @@ for(let i = 0; i < e.target.value.length; i++) {
 
 function showFormAlert () {
   if (errorMessage.length == 0) {
-    alert("Email:" + emailInput.value + "\n" + "Password:" + passwordInput.value)
-    emailInput.value = "";
-    passwordInput.value = "";
+    // alert("Email:" + emailInput.value + "\n" + "Password:" + passwordInput.value)
+    // emailInput.value = "";
+    // passwordInput.value = "";
     passwordInput.classList.remove("input-correct");
     emailInput.classList.remove("input-correct");
+    const url = "https://api-rest-server.vercel.app/login";
+
+  var formData = new FormData(formInput);
+  const queryParams= new URLSearchParams(formData).toString();
+
+  fetch(`${url}?${queryParams}`)
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error("The response is not OK")
+  })
+  .then(data => alert(data.msg))
+  .catch(error => console.log(error));
   } else {
     var errorAlert = "";
   for (var i=0; i<errorMessage.length; i++) {
@@ -86,21 +100,7 @@ passwordInput.addEventListener("focus", function (){
 })
 loginButton.addEventListener("click", showFormAlert);
 
-const url = "https://api-rest-server.vercel.app/login";
 formInput.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  var formInput = new formData (formInput);
-  const queryParams= new URLSearchParams(formInput).toString();
-  let alert
-
-  fetch(`${url}?${queryParams}`)
-  .then(response => {
-    if (response.ok) {
-      return response.json();
-    }
-    throw new Error("The response is not OK")
-  })
-  .then(data => console.log(data))
-  .catch(error => console.log(error));
-});
+  showFormAlert()
+})
