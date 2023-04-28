@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+.signup-questionary {
+    border-bottom: 2px solid black;
+}
+
+.questionary-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    background-color: #FDFBFB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 15px;
+}
+
+.group {
+    text-align: flex-start;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.input {
+    text-align: flex-end;
+}
+
+.questionary-container h2 {
+    margin-bottom: 30px;
+}
+
+#name, #surname, #id, #birthdate, #phone-number, #adress, #location, #zip-code, #email, #password, #repeat-password {
+    display: flex;
+    text-align: start;
+    margin-bottom: 10px;
+    
+}
+
+.questionary-container button {
+    margin-top: 30px;
+    margin-left: 25px;
+    height: 30px;
+    width: 120px;
+    border-radius: 3px;
+    background-color: #49A37B;
+    color: white;
+}
+
+button:hover {
+    background-color:rgba(25, 113, 120, 0.767)
+}
+
+.input-error {
+    border: red solid 1px;
+}
+
+.input-correct {
+    border:green solid 1px;
+}
+
+@media screen and (min-width:601px) { 
+
+    .questionary-container {
+        width: 90%;
+    }
+
+    #name, #lname, #dni, #birthdate, #phone-number, #adress, #location, #zip-code, #email, #password, #repeat-password {
+        height: 30px;
+    }
+
+    #birthdate {
+        width: 33vh;
+    }
+}
