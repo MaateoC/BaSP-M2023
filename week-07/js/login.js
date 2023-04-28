@@ -85,3 +85,22 @@ passwordInput.addEventListener("focus", function (){
   passwordInput.classList.remove("input-correct");
 })
 loginButton.addEventListener("click", showFormAlert);
+
+const url = "https://api-rest-server.vercel.app/login";
+formInput.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  var formInput = new formData (formInput);
+  const queryParams= new URLSearchParams(formInput).toString();
+  let alert
+
+  fetch(`${url}?${queryParams}`)
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error("The response is not OK")
+  })
+  .then(data => console.log(data))
+  .catch(error => console.log(error));
+});
