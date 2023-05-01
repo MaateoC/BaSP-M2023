@@ -60,25 +60,24 @@ for(let i = 0; i < e.target.value.length; i++) {
 
 function showFormAlert () {
   if (errorMessage.length == 0) {
-    // alert("Email:" + emailInput.value + "\n" + "Password:" + passwordInput.value)
-    // emailInput.value = "";
-    // passwordInput.value = "";
     passwordInput.classList.remove("input-correct");
     emailInput.classList.remove("input-correct");
     const url = "https://api-rest-server.vercel.app/login";
 
-  var formData = new FormData(formInput);
-  const queryParams= new URLSearchParams(formData).toString();
-
+    var formData = new FormData(formInput);
+    const queryParams= new URLSearchParams(formData).toString();
+  
   fetch(`${url}?${queryParams}`)
   .then(response => {
-    if (response.ok) {
       return response.json();
-    }
-    throw new Error("The response is not OK")
   })
-  .then(data => alert(data.msg))
-  .catch(error => console.log(error));
+  .then(data => {
+    if (data.success == false) {
+      throw new Error(data.msg); }
+      alert(data.msg)
+      console.log(data)
+    })
+  .catch(error => alert(error));
   } else {
     var errorAlert = "";
   for (var i=0; i<errorMessage.length; i++) {
@@ -87,7 +86,6 @@ function showFormAlert () {
   alert(errorAlert)
 }
 }
-
 emailInput.addEventListener("blur", validateEmail);
 emailInput.addEventListener("focus", function (){
   emailInput.classList.remove("input-error");
