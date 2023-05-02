@@ -310,8 +310,20 @@ function showFormAlert () {
       return response.json();
   })
   .then(data => {
-    if (data.success == false) {
-      throw new Error(data.msg); }
+    if (data.success) {
+      localStorage.setItem("name", nameInput.value);
+      localStorage.setItem("lastName", surnameInput.value);
+      localStorage.setItem("dni", idInput.value);
+      localStorage.setItem("dob", birthdateInput.value);
+      localStorage.setItem("phone", phoneNumberInput.value);
+      localStorage.setItem("address", adressInput.value);
+      localStorage.setItem("city", locationInput.value);
+      localStorage.setItem("zip", zipCodeInput.value);
+      localStorage.setItem("email", emailInput.value);
+      localStorage.setItem("password", passwordInput.value);
+    } else {
+      throw new Error(data.msg); 
+    }
       alert(data.msg)
       console.log(data)
     })
@@ -324,7 +336,19 @@ function showFormAlert () {
   alert(errorAlert)
 }
 }
-
+window.addEventListener("load", function() {
+    nameInput.value = localStorage.getItem("name");
+    surnameInput.value = localStorage.getItem("lastName");
+    idInput.value = localStorage.getItem("dni");
+    birthdateInput.value = localStorage.getItem("dob");
+    phoneNumberInput.value = localStorage.getItem("phone");
+    adressInput.value = localStorage.getItem("address");
+    locationInput.value = localStorage.getItem("city");
+    zipCodeInput.value = localStorage.getItem("zip");
+    emailInput.value = localStorage.getItem("email");
+    passwordInput.value = localStorage.getItem("password");
+    repeatPasswordInput.value = localStorage.getItem("password");
+})
 
 nameInput.addEventListener("blur", validateName);
 nameInput.addEventListener("focus", function (){
