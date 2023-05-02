@@ -55,23 +55,30 @@ function validateId(e) {
     errorMessage[2] = "ID required";
     idInput.classList.remove("input-correct");
     idInput.classList.add("input-error");
+    console.log(errorMessage[2])
+    return false;
   }
   if (e.target.value.length < 7) {
     errorMessage[2] = "More than 7 numbers required";
     idInput.classList.add("input-error");
+    console.log(errorMessage[2])
+    return false;
   }
   var containLetters = false;
   for(let i = 0; i < e.target.value.length; i++) {
-    if (!Number(e.target.value[i])) {
+    if (isNaN(Number(e.target.value[i]))) {
       containLetters = true;
+      return false;
     }
   }
   if (containLetters) {
     errorMessage[2] = "This is not a number"
-    idInput.classList.remove("input-error");
-    idInput.classList.add("input-correct");
+    idInput.classList.add("input-error");
+    return false
   }
-  return true
+  idInput.classList.remove("input-error");
+  idInput.classList.add("input-correct");
+  return true;
   }
 
 function validateBirthdate(e) {
@@ -115,28 +122,27 @@ return true
 function validateAdress (e) {
   var indexOfSpace = e.target.value.indexOf(" ");
   var isLetter = false;
-  var isNumber = false;
+  var isNumber = true;
 
   if (e.target.value == "" || e.target.value == null) {
     errorMessage[5] = "Adress required";
     adressInput.classList.add("input-error");
     return false;
   }
-  if (e.target.value.length < 5) {
+  else if (e.target.value.length < 5) {
     errorMessage[5] = "Adress must contain at least 5 characters";
     adressInput.classList.add("input-error");
     return false
   }
-  else if (!Number(e.target.value[indexOfSpace - 1])) {
+  if (isNaN(Number(e.target.value[indexOfSpace - 1]))) {
     isLetter = true;
   }
-  else if (Number(e.target.value[indexOfSpace + 1])) {
+  if (isNaN(Number(e.target.value[indexOfSpace + 1]))) {
     isNumber = false;
   }
-  else if (!isLetter || !isNumber || indexOfSpace == -1) {
+  if (!isLetter || !isNumber || indexOfSpace == -1) {
     errorMessage[5] = "Blank space must be between a letter and a number";
     adressInput.classList.add("input-error");
-    console.log(errorMessage[5]);
     return false;
   } else {
     adressInput.classList.remove("input-error");
@@ -186,9 +192,9 @@ function validateZipCode (e) {
     return false;
   }
   var containLetters = false;
-for(let i = 0; i < e.target.value.length; i++) {
-  if (!Number(e.target.value[i])) {
-    containLetters = true;
+  for(let i = 0; i < e.target.value.length; i++) {
+    if (isNaN(Number(e.target.value[i]))) {
+      containLetters = true;
   }
 } if (containLetters) {
     errorMessage[7] = "It only have to contain numbers";
@@ -272,20 +278,10 @@ function validateRepeatPassword (e) {
   }
 }
 
+var formData = new FormData(formInput);
 function showFormAlert () {
   if (errorMessage.length == 0) {
     alert("Name:" + nameInput.value + "\n" + "Surname:" + surnameInput.value + "\n" + "Id:" + idInput.value + "\n" + "Birthdate:" + birthdateInput.value + "\n" + "Phone Number:" + phoneNumberInput.value + "\n" + "Adress:" + adressInput.value + "\n" + "Location:" + locationInput.value + "\n" + "Zip Code:" + zipCodeInput.value + "\n" + "Email:" + emailInput.value + "\n" + "Password:" + passwordInput.value + "\n" + "Repeat password:" + repeatPasswordInput.value + "\n");
-    nameInput.value ="";
-    surnameInput.value="";
-    idInput.value="";
-    birthdateInput.value="";
-    phoneNumberInput.value="";
-    adressInput.value="";
-    locationInput.value="";
-    zipCodeInput.value="";
-    emailInput.value ="";
-    passwordInput.value ="";
-    repeatPasswordInput.value="";
     nameInput.classList.remove("input-correct");
     surnameInput.classList.remove("input-correct");
     idInput.classList.remove("input-correct");
@@ -296,6 +292,30 @@ function showFormAlert () {
     emailInput.classList.remove("input-correct");
     passwordInput.classList.remove("input-correct");
     repeatPasswordInput.classList.remove("input-correct");
+    const arrayDate = birthdateInput.value.split('-')
+    const string = `${arrayDate[1]}/${arrayDate[2]}/${arrayDate[0]}`
+    let url = "https://api-rest-server.vercel.app/signup" +
+          "?name=" + nameInput.value +
+          "&lastName=" + surnameInput.value +
+          "&dni=" + idInput.value +
+          "&dob=" + string +
+          "&phone=" + phoneNumberInput.value +
+          "&address=" + adressInput.value +
+          "&city=" + locationInput.value +
+          "&zip=" + zipCodeInput.value +
+          "&email=" + emailInput.value +
+          "&password=" + passwordInput.value;
+  fetch(`${url}`)
+  .then(response => {
+      return response.json();
+  })
+  .then(data => {
+    if (data.success == false) {
+      throw new Error(data.msg); }
+      alert(data.msg)
+      console.log(data)
+    })
+  .catch(error => alert(error));
   } else {
     var errorAlert = "";
   for (var i=0; i<errorMessage.length; i++) {
@@ -362,3 +382,6 @@ repeatPasswordInput.addEventListener("focus", function (){
   repeatPasswordInput.classList.remove("input-correct");
 })
 submitButtonInput.addEventListener("click", showFormAlert);
+formInput.addEventListener("submit", (event) => {
+  event.preventDefault()
+})
