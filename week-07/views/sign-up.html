@@ -1,103 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up - MEGA ROCKET GYM</title>
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/header.css">
-    <link rel="stylesheet" type="text/css" href="../css/sign-up.css">
-    <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../css/sign-up.css" />
+    <link rel="stylesheet" type="text/css" href="../css/footer.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <div class="menu-container">
-                <img class="menu" src="../assets/img/Union.svg">
-                <h1>MEGA ROCKET SA</h1>
-            </div>
-            <h3>A FREE AND FULLY RESPONSIVE SITE TEMPLATE</h3>
-            <div class="icon-container">
-                <a href="./index.html"><img class="icon-home" src="../assets/img/Home.svg"></a>
-                <a href="./sign-up.html"><img class="icon-user" src="../assets/img/User.svg"></a>
-                <a href="./login.html"><img class="icon-share" src="../assets/img/Share.svg"></a>
-                <a href="./index.html"><img class="icon-info" src="../assets/img/Info.svg"></a>
-            </div>
+      <div class="container">
+        <div class="menu-container">
+          <img class="menu" src="../assets/img/Union.svg" />
+          <h1>MEGA ROCKET SA</h1>
         </div>
+        <h3>A FREE AND FULLY RESPONSIVE SITE TEMPLATE</h3>
+        <div class="icon-container">
+          <a href="./index.html"
+            ><img class="icon-home" src="../assets/img/Home.svg"
+          /></a>
+          <a href="./sign-up.html"
+            ><img class="icon-user" src="../assets/img/User.svg"
+          /></a>
+          <a href="./login.html"
+            ><img class="icon-share" src="../assets/img/Share.svg"
+          /></a>
+          <a href="./index.html"
+            ><img class="icon-info" src="../assets/img/Info.svg"
+          /></a>
+        </div>
+      </div>
     </header>
 
     <section class="signup-questionary">
-        <div class="questionary-container">
-            <legend>
-                <h2>Register</h2>
-            </legend>
-            <div class="forms-containers">
-            <form>
-                <div class="left-form-container">
-                    <div class="group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name">
-                    </div>
-                    <div class="group">
-                        <label for="surname">Surname</label>
-                        <input type="text" id="surname" name="lastName">
-                    </div>
-                    <div class="group">
-                        <label for="id">ID</label>
-                        <input type="text" id="id" name="dni">
-                    </div>
-                    <div class="group">
-                        <label for="birthdate">BirthDate</label>
-                        <input type="date" id="birthdate" name="dob">
-                    </div>
-                    <div class="group">
-                        <label for="phone-number">Phone number</label>
-                        <input type="text" id="phone-number" name="phone">
-                    </div>
-                </div>
-                <div class="right-form-container">
-                    <div class="group">
-                        <label for="adress">Adress</label>
-                        <input type="text" id="adress" name="address">
-                    </div>
-                    <div class="group">
-                        <label for="location">Location</label>
-                        <input type="text" id="location" name="city">
-                    </div>
-                    <div class="group">
-                        <label for="zip-code">ZIP Code</label>
-                        <input type="text" id="zip-code" name="zip">
-                    </div>
-                    <div class="group">
-                        <label for="email">Email</label>
-                        <input type="text" id="email" name="email">
-                    </div>
-                    <div class="group">
-                        <label for="password">Password</label>
-                        <input type="text" id="password" name="password">
-                    </div>
-                    <div class="group">
-                        <label for="repeat-password">Repeat Password</label>
-                        <input type="text" id="repeat-password" name="repeat-password">
-                    </div>
-                </div>
-                <button id="submit-button" type="submit">Register</button>
-            </form>
+      <div class="questionary-container">
+        <legend>
+          <h2>Register</h2>
+        </legend>
+        <div class="forms-containers">
+          <form>
+            <div class="left-form-container">
+              <div class="group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" />
+                <p id="name-sign-up" class="red"></p>
+              </div>
+              <div class="group">
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" name="lastName" />
+                <p id="surname-sign-up" class="red"></p>
+              </div>
+              <div class="group">
+                <label for="id">ID</label>
+                <input type="text" id="id" name="dni" />
+                <p id="id-sign-up" class="red"></p>
+              </div>
+              <div class="group">
+                <label for="birthdate">BirthDate</label>
+                <input type="date" id="birthdate" name="dob" />
+                <p id="birthdate-sign-up" class="red"></p>
+              </div>
+              <div class="group">
+                <label for="phone-number">Phone number</label>
+                <input type="text" id="phone-number" name="phone" />
+                <p id="phone-sign-up" class="red"></p>
+              </div>
+            </div>
+            <div class="right-form-container">
+              <div class="group">
+                <label for="adress">Adress</label>
+                <input type="text" id="adress" name="address" />
+                <p id="adress-sign-up" class="red"></p>
+              </div>
+              <div class="group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="city" />
+                <p id="location-sign-up" class="red"></p>
+              </div>
+              <div class="group">
+                <label for="zip-code">ZIP Code</label>
+                <input type="text" id="zip-code" name="zip" />
+                <p id="zipCode-sign-up" class="red"></p>
+              </div>
+              <div class="group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" />
+                <p id="email-sign-up" class="red"></p>
+              </div>
+              <div class="group">
+                <label for="password">Password</label>
+                <input type="text" id="password" name="password" />
+                <p id="password-sign-up" class="red"></p>
+              </div>
+              <div class="group">
+                <label for="repeat-password">Repeat Password</label>
+                <input
+                  type="text"
+                  id="repeat-password"
+                  name="repeat-password"
+                />
+                <p id="repeatPassword-sign-up" class="red"></p>
+              </div>
+            </div>
+            <button id="submit-button" type="submit">Register</button>
+          </form>
         </div>
-        </div>
+      </div>
     </section>
 
     <footer>
-        <div class="icon-footer">
-            <img src="../assets/img/facebook.svg">
-            <img src="../assets/img/whatsapp.svg">
-            <img src="../assets/img/instagram.svg">
-        </div>
-        <p>&copy;MEGA ROCKET SA 2023</p>
+      <div class="icon-footer">
+        <img src="../assets/img/facebook.svg" />
+        <img src="../assets/img/whatsapp.svg" />
+        <img src="../assets/img/instagram.svg" />
+      </div>
+      <p>&copy;MEGA ROCKET SA 2023</p>
     </footer>
     <script src="../js/signup.js"></script>
-</body>
+  </body>
 </html>

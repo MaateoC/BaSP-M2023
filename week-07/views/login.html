@@ -1,72 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In - MEGA ROCKET GYM</title>
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/header.css">
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/header.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link rel="stylesheet" type="text/css" href="../css/footer.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <div class="menu-container">
-                <img class="menu" src="../assets/img/Union.svg">
-                <h1>MEGA ROCKET SA</h1>
-            </div>
-            <h3>A FREE AND FULLY RESPONSIVE SITE TEMPLATE</h3>
-            <div class="icon-container">
-                <a href="./index.html"><img class="icon-home" src="../assets/img/Home.svg"></a>
-                <a href="./sign-up.html"><img class="icon-user" src="../assets/img/User.svg"></a>
-                <a href="./login.html"><img class="icon-share" src="../assets/img/Share.svg"></a>
-                <a href="./index.html"><img class="icon-info" src="../assets/img/Info.svg"></a>
-            </div>
+      <div class="container">
+        <div class="menu-container">
+          <img class="menu" src="../assets/img/Union.svg" />
+          <h1>MEGA ROCKET SA</h1>
         </div>
+        <h3>A FREE AND FULLY RESPONSIVE SITE TEMPLATE</h3>
+        <div class="icon-container">
+          <a href="./index.html"
+            ><img class="icon-home" src="../assets/img/Home.svg"
+          /></a>
+          <a href="./sign-up.html"
+            ><img class="icon-user" src="../assets/img/User.svg"
+          /></a>
+          <a href="./login.html"
+            ><img class="icon-share" src="../assets/img/Share.svg"
+          /></a>
+          <a href="./index.html"
+            ><img class="icon-info" src="../assets/img/Info.svg"
+          /></a>
+        </div>
+      </div>
     </header>
 
     <section class="signin-questionary">
-        <div class="questionary-container">
-            <h2>Sign In</h2>
-            <div class="form-container">
-                <form class="form" id="form">
-                    <div class="form-control">
-                        <img class="message-icon" src="../assets/img/messagee.png">
-                        <label for="email"></label>
-                        <input type="email" id="email" name="email" placeholder="Email">
-                    </div>
-                    <div class="form-control">
-                        <img class="locker-icon" src="../assets/img/locker.svg">
-                        <label for="password"></label>
-                        <input type="password" id="password" name="password" placeholder="Password">
-                    </div>
-                </form>
-            <div class="options-container">
-                <input class="checkbox" type="checkbox" name="remember-me">
-                <label class="text-options" for="remember-me">Remember Me</label>
+      <div class="questionary-container">
+        <h2>Sign In</h2>
+        <div class="form-container">
+          <form class="form" id="form">
+            <div class="form-control">
+              <div class="image-container">
+                <img class="message-icon" src="../assets/img/messagee.png" />
+              </div>
+              <label for="email"></label>
+              <div class="input-container">
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                />
+                <p id="email-login" class="red"></p>
+              </div>
             </div>
-            <div class="text-container">
-                <p>Forgot password?</p>
-                <a href="">Get help</a>
+            <div class="form-control">
+              <div class="image-container">
+                <img class="locker-icon" src="../assets/img/locker.svg" />
+              </div>
+              <label for="password"></label>
+              <div class="input-container">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                />
+                <p id="password-login" class="red"></p>
+              </div>
             </div>
-            <button id="continue">Continue</button>
-            </div>
+          </form>
+          <div class="options-container">
+            <input class="checkbox" type="checkbox" name="remember-me" />
+            <label class="text-options" for="remember-me">Remember Me</label>
+          </div>
+          <div class="text-container">
+            <p>Forgot password?</p>
+            <a href="">Get help</a>
+          </div>
+          <button id="continue">Continue</button>
         </div>
+      </div>
     </section>
 
     <footer>
-        <div class="icon-footer">
-            <img src="../assets/img/facebook.svg">
-            <img src="../assets/img/whatsapp.svg">
-            <img src="../assets/img/instagram.svg">
-        </div>
-        <p>&copy;MEGA ROCKET SA 2023</p>
+      <div class="icon-footer">
+        <img src="../assets/img/facebook.svg" />
+        <img src="../assets/img/whatsapp.svg" />
+        <img src="../assets/img/instagram.svg" />
+      </div>
+      <p>&copy;MEGA ROCKET SA 2023</p>
     </footer>
     <script src="../js/login.js"></script>
-</body>
+  </body>
 </html>
