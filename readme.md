@@ -34,4 +34,14 @@ Learned "variables and operators"; "strings; "arrays"; "if-else"; "for" and "fun
 What did I learned on this week?
 ```
 Learned to use Javascript logic combined with html and css files to do form validations.
+
+## Week-07
+```
+What did I learned on this week?
+```
+•Learned how to create a Local Storage.
+•Learned how to make validations to an especific user.
+•Learned to understand the details of Client-Server architectures.
+•Learned to implement HTTP requests to external services to get data asynchrounsly.
+•We adopted tools for data persistence in the browser.
 ## Author: Mateo Carciente
