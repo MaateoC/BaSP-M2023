@@ -9,16 +9,40 @@
 .questionary-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: 70px;
     margin-bottom: 100px;
     margin-left: 30px;
     margin-right: 30px;
-    padding-top: 30px;
-    padding-bottom: 50px;
+    padding-top: 80px;
+    padding-bottom: 100px;
     background-color: #FDFBFB;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 15px;
+}
+
+.questionary-container h2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.forms-container {
+    flex-direction: row;
+    align-items: center;
+}
+
+.general-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.left-form-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
 }
 
 .group {
@@ -27,19 +51,50 @@
     padding-bottom: 5px;
 }
 
-.input {
-    text-align: flex-end;
-}
-
-.questionary-container h2 {
-    margin-bottom: 30px;
-}
-
 #name, #surname, #id, #birthdate, #phone-number, #adress, #location, #zip-code, #email, #password, #repeat-password {
     display: flex;
     text-align: start;
     margin-bottom: 10px;
     
+}
+
+.input {
+    text-align: flex-end;
+}
+
+.input-error {
+    border: red solid 1px;
+}
+
+.input-correct {
+    border:green solid 1px;
+}
+
+.input-container input {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.input-container p {
+    text-align: start;
+    margin: 5px 0 0 0;
+    font-size: 12px;
+    color: red;
+}
+
+.right-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .questionary-container button {
@@ -54,14 +109,6 @@
 
 button:hover {
     background-color:rgba(25, 113, 120, 0.767)
-}
-
-.input-error {
-    border: red solid 1px;
-}
-
-.input-correct {
-    border:green solid 1px;
 }
 
 @media screen and (min-width:601px) { 
